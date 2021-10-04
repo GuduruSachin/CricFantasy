@@ -1,0 +1,44 @@
+<div class="main_wrap">
+  <mat-toolbar [ngStyle]="{'background-color': ChangeBackground == true ? '#FFFFFF' : '#E74C3C','position' : ChangeBackground == true ? 'fixed' : 'relative'}" style="z-index: 999;height: 80px;" class="mat-elevation-z5">
+      <mat-toolbar-row>
+          <button style="margin-left: 4%;" *ngIf="SideNaveDisplay" mat-icon-button (click)="menuclick()" matTooltip="Menu">
+              <mat-icon style="color:#FEFEFF;" aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <img [ngStyle]="{'margin-left': SideNaveDisplay == true ? '15px' : '10%'}" [src]="FCI" style="height: 70px;width: 85px;margin-top: 10px;">
+          <span class="spacer"></span>
+          <div *ngIf="ToolbarDisplay" class="row col-5" style="margin-top: 10px;">
+              <li class="col-2 list_texts_toolbar" [ngStyle]="{'color' : ChangeBackground == true ? '#000000' : '#FFFFFF'}">Home</li>
+              <li class="col-3 list_texts_toolbar" [ngStyle]="{'color' : ChangeBackground == true ? '#000000' : '#FFFFFF'}">About Us</li>
+              <li class="col-3 list_texts_toolbar" [ngStyle]="{'color' : ChangeBackground == true ? '#000000' : '#FFFFFF'}">How To Use</li>
+              <li class="col-3 list_texts_toolbar" [ngStyle]="{'color' : ChangeBackground == true ? '#000000' : '#FFFFFF'}">Contact Us</li>
+          </div>
+          <div style="margin-right: 10%;">
+          </div>
+      </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav *ngIf="SideNaveDisplay" style="background-color: #ffffff;padding-top: 80px; overflow-x: hidden;position: fixed;" #sidenav [opened]="screenWidth < 950" mode = "over" class="sidenav mat-elevation-z3">
+        <mat-nav-list>
+            <mat-list-item (click)= "sidenav.close()">Home</mat-list-item>
+            <mat-list-item (click)= "sidenav.close()">About US</mat-list-item>
+            <mat-list-item (click)= "sidenav.close()">How To Use</mat-list-item>
+            <mat-list-item (click)= "sidenav.close()">Contact Us</mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="row app_heading" style="margin: 0px;padding : 0px">
+            <div class="col-md-7">
+                <label class="heading_text">GET EXCLUSIVE APPLICATION FOR BEST TEAM</label>
+                <label class="normal_text" style="margin-top: 40px;">Buy And Sell Team Through Points.</label>
+                <label class="normal_text">Build Your Own Followers, Follow People and see what they like, dislike, share and comment on your post.</label>
+                <div style="">
+
+                </div>
+            </div>
+            <div class="col-md-5">
+
+            </div>
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
